@@ -1,0 +1,23 @@
+---
+framework: jest
+blocklist:
+  - "test/algorithms/new-test.js##geometric algorithm##should handle the minimum end of the range correctly"
+  
+preRun:
+     command:
+        - npm i
+        - npm run react
+preMerge:
+  pattern:
+    - "test/algorithms/geometric-test.js"
+    - "test/algorithms/new-test.js"
+postMerge: 
+  pattern: 
+    - "test/algorithms/geometric-test.js"
+    - "test/algorithms/new-test.js"
+postRun:
+     command:
+        - node --version
+nodeVersion: 14.18.1
+# parallelism: 3
+version: 1.0
